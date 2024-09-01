@@ -8,4 +8,5 @@ export abstract class ICriaUsuarioRepository {
     username: string,
     email: string,
   ) => Promise<CreateUserEntity>;
+  abstract findUserByUsername: (username: string) => Promise<CreateUserEntity>;
 }
