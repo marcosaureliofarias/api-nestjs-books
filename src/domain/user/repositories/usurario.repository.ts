@@ -13,6 +13,22 @@ export class CriaUsuarioRepository implements ICriaUsuarioRepository {
     this.repository = this.connection.getRepository(CreateUserEntity);
   }
 
+  buscaUmRegistroPorNomeEmail(
+    username: string,
+    email: string,
+  ): Promise<CreateUserEntity> {
+    try {
+      return this.repository.findOne({
+        where: {
+          username: username,
+          email: email,
+        },
+      });
+    } catch (error) {
+      throw new error();
+    }
+  }
+
   async criaUmRegistro(data: CreateUserDto): Promise<CreateUserEntity> {
     try {
       return await this.repository.save(data);
