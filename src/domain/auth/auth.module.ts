@@ -12,7 +12,7 @@ import { ICriaUsuarioRepository } from '../user/interfaces';
     PassportModule,
     JwtModule.register({
       secret: 'sd31f3sd51fs3d54f3sd54s5d43sd',
-      signOptions: { expiresIn: '60s' },
+      signOptions: { expiresIn: '180s' },
     }),
   ],
   providers: [
